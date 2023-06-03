@@ -15,7 +15,7 @@ class GameApiTest: AbstractTest() {
 
     @Test
     @DisplayName("게임이 정상적으로 시작되면, 중복되지 않은 roomId를 메시지로 리턴합니다.")
-    fun currentJvmMilliseconds() {
+    fun newGameTest() {
         val result = mockMvc.perform(
             RestDocumentationRequestBuilders.post("/game/start")
                 .contentType(MediaType.APPLICATION_JSON)
@@ -23,6 +23,9 @@ class GameApiTest: AbstractTest() {
         )
 
         result.andExpect(MockMvcResultMatchers.status().isOk)
+            .andExpect(MockMvcResultMatchers.jsonPath("data").exists())
+            .andExpect(MockMvcResultMatchers.jsonPath("data.roomId").isNumber)
+            .andExpect(MockMvcResultMatchers.jsonPath("success").value(true))
             .andDo(
                 MockMvcRestDocumentation.document(
                     "{class-name}/{method-name}",

@@ -9,6 +9,8 @@ endif::[]
 
 == 헬스체크 api
 === HTTP request
-include::{snippets}/hello-controller-test/current-jvm-milliseconds/http-request.adoc[]
+include::{snippets}/health-check-api-test/current-jvm-milliseconds/http-request.adoc[]
 === HTTP response
-include::{snippets}/hello-controller-test/current-jvm-milliseconds/http-response.adoc[]
+include::{snippets}/health-check-api-test/current-jvm-milliseconds/http-response.adoc[]
+
+include::{adocbase}/game.adoc[]

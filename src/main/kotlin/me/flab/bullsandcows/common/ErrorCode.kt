@@ -4,5 +4,6 @@ enum class ErrorCode(
     val message: String,
     val status: Int
 ) {
-    // TODO 에러코드 작성하기
+    ALREADY_CLOSED("이미 종료된 게임입니다.", 400),
+    INVALID_ANSWER("점수판의 정답을 생성하던 중 문제가 발생했습니다.", 500)
 }

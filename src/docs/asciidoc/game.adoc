@@ -1,0 +1,8 @@
+[[game]]
+== 숫자 야구 게임 api
+
+=== 게임 생성 api
+==== HTTP request
+include::{snippets}/game-api-test/new-game-test/http-request.adoc[]
+==== HTTP response
+include::{snippets}/game-api-test/new-game-test/http-response.adoc[]
