@@ -13,7 +13,7 @@ class GameStartProcessor(
     fun startNewGame(): GameData {
         val settings = answerSettingsGenerator.generate()
         val newGame = Game.newInstance(answer = settings.answer, threshold = settings.threshold)
-        val result = gameRepository.save(newGame)
-        return GameData.from(result)
+        val newRecord = gameRepository.save(newGame)
+        return GameData.from(newRecord)
     }
 }
