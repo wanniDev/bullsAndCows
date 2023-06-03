@@ -1,6 +1,9 @@
 package me.flab.bullsandcows
 
 import com.fasterxml.jackson.databind.ObjectMapper
+import me.flab.bullsandcows.common.URI_HOST
+import me.flab.bullsandcows.common.URI_PORT
+import me.flab.bullsandcows.common.URI_SCHEME
 import org.junit.jupiter.api.TestInstance
 import org.junit.jupiter.api.extension.ExtendWith
 import org.springframework.beans.factory.annotation.Autowired
@@ -15,7 +18,7 @@ import org.springframework.test.web.servlet.MockMvc
 
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
 @AutoConfigureMockMvc
-@AutoConfigureRestDocs(uriScheme = "http", uriHost = "127.0.0.1", uriPort = 8080)
+@AutoConfigureRestDocs(uriScheme = URI_SCHEME, uriHost = URI_HOST, uriPort = URI_PORT)
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 @ExtendWith(RestDocumentationExtension::class)
 abstract class AbstractTest {

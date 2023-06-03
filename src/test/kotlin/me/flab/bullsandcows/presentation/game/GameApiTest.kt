@@ -3,6 +3,7 @@ package me.flab.bullsandcows.presentation.game
 import me.flab.bullsandcows.AbstractTest
 import org.junit.jupiter.api.DisplayName
 import org.junit.jupiter.api.Test
+import org.springframework.http.MediaType
 import org.springframework.restdocs.mockmvc.MockMvcRestDocumentation
 import org.springframework.restdocs.mockmvc.RestDocumentationRequestBuilders
 import org.springframework.restdocs.operation.preprocess.Preprocessors
@@ -15,7 +16,11 @@ class GameApiTest: AbstractTest() {
     @Test
     @DisplayName("게임이 정상적으로 시작되면, 중복되지 않은 roomId를 메시지로 리턴합니다.")
     fun currentJvmMilliseconds() {
-        val result = mockMvc.perform(RestDocumentationRequestBuilders.post("/game/start"))
+        val result = mockMvc.perform(
+            RestDocumentationRequestBuilders.post("/game/start")
+                .contentType(MediaType.APPLICATION_JSON)
+                .accept(MediaType.APPLICATION_JSON)
+        )
 
         result.andExpect(MockMvcResultMatchers.status().isOk)
             .andDo(
