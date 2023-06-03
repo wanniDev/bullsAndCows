@@ -1,0 +1,14 @@
+ifndef::snippets[]
+:snippets: ../../build/generated-snippets
+endif::[]
+= 숫자 야구
+:toc: left
+:toclevels: 4
+:sectlinks:
+:adocbase: {snippets}/../../src/docs/asciidoc
+
+== 헬스체크 api
+=== HTTP request
+include::{snippets}/hello-controller-test/current-jvm-milliseconds/http-request.adoc[]
+=== HTTP response
+include::{snippets}/hello-controller-test/current-jvm-milliseconds/http-response.adoc[]
