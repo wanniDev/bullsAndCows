@@ -14,8 +14,8 @@ data class GuessResultData(
             return GuessResultData(
                 guessResult.isCorrect(),
                 guessResult.remaining,
-                guessResult.cows,
-                guessResult.bulls,
+                guessResult.strike,
+                guessResult.ball,
                 guessResult.out
             )
         }

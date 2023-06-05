@@ -9,8 +9,8 @@ class ScoreBox private constructor(
     val threshold: Int = 10,
 ) {
     fun measure(guessNumber: String): GuessResult {
-        var bulls = 0
-        var cows = 0
+        var ball = 0
+        var strike = 0
         val dic = IntArray(10)
 
         this.tryCount.plus(1)
@@ -21,7 +21,7 @@ class ScoreBox private constructor(
             val gc = guessNumber[i]
 
             if (ac == gc) {
-                cows++
+                strike++
             } else {
                 dic[ac - '0']++
             }
@@ -34,13 +34,13 @@ class ScoreBox private constructor(
 
             if (ac != gc) {
                 if (dic[gc - '0'] > 0) {
-                    bulls++
+                    ball++
                     dic[gc - '0']--
                 }
             }
         }
 
-        return GuessResult(this.threshold - this.tryCount, bulls, cows, 3 - (bulls + cows))
+        return GuessResult(this.threshold - this.tryCount, ball, strike, 3 - (ball + strike))
     }
 
     fun isAvailable(): Boolean {

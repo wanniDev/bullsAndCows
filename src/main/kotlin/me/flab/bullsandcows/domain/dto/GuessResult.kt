@@ -2,11 +2,11 @@ package me.flab.bullsandcows.domain.dto
 
 data class GuessResult(
     val remaining: Int,
-    val bulls: Int,
-    val cows: Int,
+    val ball: Int,
+    val strike: Int,
     val out: Int,
 ) {
     fun isCorrect(): Boolean {
-        return cows == 3;
+        return strike == 3;
     }
 }
