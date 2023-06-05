@@ -18,7 +18,7 @@ F-LAB 내부에서 진행하는 '객체지향의 사실과 오해 스터디'를 
 - 객체지향은 결국 자기 데이터를 숨긴 독립된 객체들이, 메시지 소통을 통해서 소프트웨어를 구성하는 방식입니다.
 ### CQRS
 ![image](https://github.com/wanniDev/TIL_collection/assets/81374655/57156e90-16b3-4dae-b601-6f449b7f2b75)
-> 이미지 출처: 마티https://martinfowler.com/bliki/CQRS.html
+> 이미지 출처: [https://martinfowler.com/bliki/CQRS.html](https://martinfowler.com/bliki/CQRS.html)
 
 CQRS는 명령과 쿼리 모델을 나누어서 요구사항에 따라 애플리케이션의 복잡도가 증가하는 것을 해소하고 확장성 있는 애플리케이션의 구조를 만들고자 고안된 아키텍처 패턴입니다.
 '명령'과 '쿼리' 모델의 정의를 DB 관점에서 보면, 명령은 무조건 insert, update 쿼리는 무조건 select로 분류할 수도 있는데 이러한 정의는 CQRS가 추구하는 목표를
