@@ -4,4 +4,5 @@ import me.flab.bullsandcows.domain.model.Game
 
 interface GameRepository {
     fun save(entity: Game): Game
+    fun findByRoomId(roomId: Long): Game
 }

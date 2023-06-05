@@ -40,7 +40,7 @@ class ScoreBox private constructor(
             }
         }
 
-        return GuessResult(bulls, cows, 3 - (bulls + cows))
+        return GuessResult(this.threshold - this.tryCount, bulls, cows, 3 - (bulls + cows))
     }
 
     fun isAvailable(): Boolean {

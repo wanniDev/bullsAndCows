@@ -1,5 +1,6 @@
 package me.flab.bullsandcows.infrastructure.memory
 
+import me.flab.bullsandcows.domain.exception.RoomNotFoundException
 import me.flab.bullsandcows.domain.model.Game
 import me.flab.bullsandcows.domain.repository.GameRepository
 import java.util.concurrent.ConcurrentHashMap
@@ -14,5 +15,9 @@ class InMemoryGameRepositoryAdapter: GameRepository {
         entity.roomId = roomId
         collection[roomId] = entity
         return entity
+    }
+
+    override fun findByRoomId(roomId: Long): Game {
+        return collection[roomId] ?: throw RoomNotFoundException()
     }
 }
