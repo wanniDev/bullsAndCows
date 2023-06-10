@@ -8,8 +8,8 @@ import org.springframework.stereotype.Component
 @Component
 class ScoreCalculateProcessor(private val gameRepository: GameRepository) {
     fun calculate(command: GuessCommand): GuessResultData {
-        val roomData = gameRepository.findByRoomId(command.roomId)
-        val result = roomData.scoreBox.measure(command.guess)
+        val room = gameRepository.findByRoomId(command.roomId)
+        val result = room.guess(command.guess)
         return GuessResultData.from(result)
     }
 }
